@@ -1,0 +1,75 @@
+rails generate scaffold feedback define_1:decimal define_2:decimal define_3:decimal define_t:decimal access_1:decimal access_2:decimal  access_3:decimal access_4:decimal access_t:decimal evaluate_1:decimal evaluate_2:decimal evaluate_3:decimal evaluate_4:decimal evaluate_t:decimal use_1:decimal use_2:decimal use_t:decimal il_total:decimal
+
+Standard one ACRL (Define)
+Out of 160
+Student formulates good research question 
+RESEARCH_A
+score
+out of 50
+student evaluates the nature of information in different websites and decides which is most reliable
+RESEARCH_B
+score
+0/10/60
+Student knows difference between different types of information sources
+REASEARCH_C
+score
+0/50
+
+
+access 
+Out of approx 400 scale to 
+Student can Access information 
+VIDEO_SCORES
+task_completed
+1/100
+PART_SCORES
+task_completed
+1/100
+Student can Access information quickly
+VIDEO_SCORES
+score /160
+PART_SCORES
+score /160
+No score but information-Student refines search 
+VIDEO_SCORES
+searches
+refine_count
+PART_SCORES
+vehicle_type
+searches
+refine_count
+
+
+
+Evaluate
+scores out of 220 
+WEBSITES
+most_reliable 0/10/70
+most_reason 0/10/50
+least_reliable 0/50
+least_reason 0/10/50
+
+
+
+
+Use
+Out of 120
+PRESENT_TITLES
+titlea - 30 
+Add in body scores - 30 each (10 for one or two)
+
+
+
+Total score out of 900
+
+INFORMATION
+full_name
+form
+age
+gender
+
+
+
+
+
+

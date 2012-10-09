@@ -1,0 +1,28 @@
+<%= image_tag("Taskbar3.png" )%>
+<p><%= @choice%>
+<div>
+<%= form_tag edit_user_video_score_path, :method => 'get' do %>
+<p> <%= search_field_tag :search, params[:search] %>
+<%= submit_tag "search", :name => nil %>
+</p>
+<%end%>
+
+
+</div>
+
+
+
+
+
+
+<%= form_tag edit_user_video_score_path, :method => 'get' do %>
+<p><% @searches.each do |search| %></p> 
+<p><%= search.title %></br><%= search.length %></br><%= search.description %></p><p><%=search.chosen%></p>
+
+<div class="field">	<%= radio_button_tag(:choice, search.id)%></div><div class="actions"><%= submit_tag 'Submit this video', :name => nil %></div> 
+
+
+<%end%>
+<%end%>
+
+<%= @response %>

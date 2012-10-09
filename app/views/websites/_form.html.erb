@@ -1,0 +1,161 @@
+
+
+
+<table cellspacing="5">
+<tr>
+	<td  rowspan="3" width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+		</br>
+		<b>Instructions:</b></br> 
+			</br>
+			Your teacher has set you a task of researching the question ‘What has caused black rhinos to become an endangered species?’</br>
+
+			You have received an email from a group member about 3 websites that they have found on the topic and they want you to decide which website is the most useful.  
+		
+
+		</br>
+		</br>
+			<b>You must:</b>
+		</br>
+		
+		<p>Click on each link to view the websites.</p> 
+		
+	
+		
+		<p><%= link_to "www.rhinosneedsaving.com", rhino_donate_path%> </p>
+
+		<p><%= link_to "www.answerallyourquestions.com", rhino_answers_path%></p>
+
+		<p> <%= link_to "www.universityofkenya.ac.ke", rhino_university_path%></p>
+		
+		<p> Return to this page using <a class="nextbutton"> Back to Task 2 email</a></p>
+		
+		<p> Then Rank the 3 websites in terms of their relevance to your teacher’s research question and their reliability using the multiple choice menus provided.</p>
+	</td>
+
+<td>
+	<table  class="email" width="100%"  cellpadding="10px" bgcolor="#CCC">
+	  <tr>
+	    <td width="22%" rowspan="2" class="tableinbox">
+			<p style="color:#39F"><%= image_tag("folder.png", :size=>"16x16")%> Inbox</p>
+	    	<p><%= image_tag("folder.png", :size=>"16x16")%> Sent </p>
+	    	<p><%= image_tag("folder.png", :size=>"16x16")%> Drafts</p>
+	    	<p><%= image_tag("folder.png", :size=>"16x16")%> Spam</p>
+	    	<p>&nbsp;</p>
+		</td>
+	    <td width="78%">
+		<table width="100%" class="tableinbox" >
+	      <tr class="titlebar">
+	        <td width="27%" ><b>From</b></td>
+	        <td width="58%"><b>Subject</b></td>
+	        <td width="15%"><b>Date</b></td>
+	      </tr>
+	      <tr>
+	        <td>Francis Ruto</td>
+	        <td>Hello</td>
+	        <td>1/6/12</td>
+	      </tr>
+
+	      <tr bgcolor="#99CCFF" >
+	        <td>John Biwott</td>
+	        <td>Website assessment</td>
+	        <td>1/6/12</td>
+	      </tr>
+	      <tr>
+	        <td>Mary Kosgei</td>
+	        <td>Wedding Photos</td>
+	        <td>30/5/12</td>
+	      </tr>
+	      <tr>
+	        <td>Jane Lukakha</td>
+	        <td>Re: Homework Help</td>
+	        <td>25/5/12</td>
+	      </tr>
+	      <tr>
+	        <td>Jane Lukakha</td>
+	        <td>Homework Help</td>
+	        <td>25/5/12</td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+	    <td>
+					<table width="100%" class="tableinbox" cellpadding="30px"  >
+						<tr><td class="titlebar">
+								<p><b>From:</b> John Biwott j.biwott@mail.schoo.com.ke </p>
+								<p><b>Date:</b> 1/6/2012 14:30</p>
+								<p><b>Subject:</b> Website assessment</p>
+	    				</td></tr>
+						<tr class="tableinbox"><td >
+							<p> Hi</p>
+
+							<p> I found these 3 great websites and I was wondering what you think?</p>
+
+							<p><%= link_to "www.rhinosneedsaving.com", rhino_donate_path%> </p>
+
+							<p><%= link_to "www.answerallyourquestions.com", rhino_answers_path%></p>
+
+							<p> <%= link_to "www.universityofkenya.ac.ke", rhino_university_path%></p>
+
+							<p> If you fill in the form below then I will be able to see what you think. I need to know which website 
+							is the most reliable and why.</p>
+
+
+							<p> Thanks</p>
+
+							<p> John</p>
+	    				</td></tr>
+					</table>
+	    </td>
+	  </tr>
+	</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<%= form_for([@user, @website]) do |f| %>
+  <% if @website.errors.any? %>
+    <div id="error_explanation">
+      <h2>Please fill in the fields highlighted in red</h2>
+
+     
+    </div>
+  <% end %>
+
+<table cellpadding="10" width="100%" bgcolor="#FFFFFF">
+	<tr>
+	<td class="question2">	<div class="field">	<%= f.label(:most_reliable, "Select the website that is the most reliable")%></div></td>
+	<td class="question2">	<div class="field"> <%= f.select :most_reliable, options_for_select( [["Select website",""], ["www.rhinosneedsaving.com","10"],["www.answerallyourquestions.com", "0"], ["www.universityofkenya.ac.ke","70"]], :disabled=>"Select website")   %></div></td>
+	</tr>
+	<tr>
+	<td class="question2">	<div class="field">	<%= f.label(:most_reason, "Why did you select that website?")%></div></td>
+	<td class="question2">	<div class="field"> <%= f.select :most_reason, options_for_select( [["Select reason",""], ["The layout was very clear","0"], ["The information seemed correct", "10"], ["The people that made the website were the most qualified 
+	on this subject", "50"], ["They were all reliable websites", "5"]], :disabled=>"Select reason")   %></div></td>
+	</tr>
+
+	<tr>
+	<td class="question2">	<div class="field">	<%= f.label(:least_reliable, "Select the website that is the least reliable")%></div></td>
+	<td class="question2">	<div class="field"> <%= f.select :least_reliable, options_for_select( [["Select website",""], ["www.rhinosneedsaving.com","50"],["www.answerallyourquestions.com", "50"], ["www.universityofkenya.ac.ke","0"]], :disabled=>"Select website")   %></div></td>
+	</tr>
+	<tr>
+	<td class="question2">	<div class="field">	<%= f.label(:least_reason, "Why did you select that website?")%></div></td>
+	<td class="question2">	<div class="field"> <%= f.select :least_reason, options_for_select( [["Select reason",""], ["It had the worst layout","0"], ["The information didn't seem correct", "20"], ["The people that made the website were the least qualified 
+	on this subject", "50"], ["There were no reliable websites", "10"]], :disabled=>"Select reason")   %></div></td>
+	</tr>
+
+
+
+</td>
+</tr>
+<tr>	
+	<td class="submit"  >	
+<div>
+  <%= f.submit  "Next Task"%>
+</div>
+	</td></tr>
+</table>
+
+<%end%>
+
+
+

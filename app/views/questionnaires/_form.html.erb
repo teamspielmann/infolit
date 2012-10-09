@@ -1,0 +1,242 @@
+<%= form_for([@user,@questionnaire]) do |f| %>
+  <% if @questionnaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@questionnaire.errors.count, "error") %> prohibited this questionnaire from being saved:</h2>
+
+      <ul>
+      <% @questionnaire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p class='heading' >Student Questionnaire</p>
+
+<table>
+	<tr>
+		<td colspan='2'>
+			<p class='questions'> 1) How Frequently can you use:</p>
+		</td>
+		<td>
+		</td>	
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+		<td>
+		</td>
+	</tr>
+	
+	<tr>
+		<td width='80px'>
+		</td>
+		<td>
+		</td>
+		<td bgcolor='#e9ebed'> <b> Never</b>
+		</td>	
+		<td align='center' bgcolor='#dee2eb'><b>A Few Times </br> a Year</b>
+		</td>
+		<td bgcolor='#e9ebed'><b>Monthly</b>
+		</td>
+		<td bgcolor='#dee2eb'><b>Weekly</b>
+		</td>
+		<td bgcolor='#e9ebed'> <b>Daily</b>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<td>
+		</td>
+		<td><p> computers with teacher supervision </p>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :ict_c_teacher, '1' %>
+		</td>	
+		<td align='center' bgcolor='#dee2eb'><%= f.radio_button :ict_c_teacher, '2' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'><%= f.radio_button :ict_c_teacher, '3' %>
+		</td>
+		<td align='center' bgcolor='#dee2eb'><%= f.radio_button :ict_c_teacher, '4' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :ict_c_teacher, '5' %>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+		</td>
+		
+		<td><p>computers without teacher supervision </p>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :ict_no_teacher, '1' %>
+		</td>	
+		<td align='center' bgcolor='#dee2eb'><%= f.radio_button :ict_no_teacher, '2' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'><%= f.radio_button :ict_no_teacher, '3' %>
+		</td>
+		<td align='center' bgcolor='#dee2eb'><%= f.radio_button :ict_no_teacher, '4' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :ict_no_teacher, '5' %>
+		</td>
+	</tr>	
+	
+	<tr>	
+			<td>
+			</td>
+			
+			<td><p>the internet in school </p>
+			</td>
+			<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :internet_school, '1' %>
+			</td>	
+			<td align='center' bgcolor='#dee2eb' ><%= f.radio_button :internet_school, '2' %>
+			</td>
+			<td align='center' bgcolor='#e9ebed'><%= f.radio_button :internet_school, '3' %>
+			</td>
+			<td align='center' bgcolor='#dee2eb' ><%= f.radio_button :internet_school, '4' %>
+			</td>
+			<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :internet_school, '5' %>
+			</td>
+	</tr>
+	
+	<tr>
+		<td>
+		</td>
+		
+		<td cellpadding='10' ><p>the internet outside school </p>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :internet_outside, '1' %>
+		</td>	
+		<td align='center' bgcolor='#dee2eb' ><%= f.radio_button :internet_outside, '2' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'><%= f.radio_button :internet_outside, '3' %>
+		</td>
+		<td align='center' bgcolor='#dee2eb' ><%= f.radio_button :internet_outside, '4' %>
+		</td>
+		<td align='center' bgcolor='#e9ebed'> <%= f.radio_button :internet_outside, '5' %>
+		</td>
+	</tr>
+	
+	<tr> 
+		<td colspan='6'> <p>&nbsp;</p>
+		</td>
+	
+	
+	<tr> 
+		<td colspan='6'> 
+			<p class='questions'><b> 2) When you use a computer at school which one of the following is usually  true </b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+		</td>
+
+		<td>    <%= f.radio_button :sharing_computer, '1' %> 
+		</td>
+		<td colspan='4'>
+		I have a computer to myself
+		</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+
+			<td>     <%= f.radio_button :sharing_computer, '2' %> 
+			</td>
+			<td colspan='4'>
+			   I share the computer with 1 other student	
+			</td>
+		</tr>
+		
+		<tr>
+		<td>
+		</td>
+		<td>
+		</td>
+
+		<td>     <%= f.radio_button :sharing_computer, '3' %> 
+		</td>
+		<td colspan='4'>
+I share the computer with 2 other students		
+		</td>
+		</tr>
+		
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+
+			<td>     <%= f.radio_button :sharing_computer, '4' %> 
+			</td>
+			<td colspan='4'>
+I share the computer with 3 other students			
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+
+			<td>     <%= f.radio_button :sharing_computer, '5' %> 
+			</td>
+			<td colspan='4'>
+Only the teacher uses the computer			
+			</td>
+		</tr>
+			
+		<tr>
+			<td colspan='6'>
+				<p class='questions'><b>3) What opportunities do you have to use computers in school?</b></p>
+			</td>
+		</tr>
+
+	
+	<tr>
+		<td>
+		</td>	
+		<td colspan='6'>
+			<%= f.text_area :ict_opportunities_school, :rows => 3, :cols => 110 %> 
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td colspan='7'>
+			<p class='questions'><b>4)What opportunities do you have to use computers outside of school? (eg. a cybercave)
+			</b></p>
+		</td>
+	</tr>
+
+
+<tr>
+	<td>
+	</td>	
+	<td colspan='6'>
+
+
+			
+		    <%= f.text_area :ict_opportunities_out, :rows => 3, :cols => 110 %>
+		</td>
+	</tr>
+
+<tr>
+	<td colspan='7' align='right'>
+	<%= f.submit 'Finish' %>
+
+	</td>
+</tr>	
+</table>
+
+    
+  
+<% end %>

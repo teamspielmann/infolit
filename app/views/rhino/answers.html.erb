@@ -1,0 +1,111 @@
+<head>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+}
+.style1 {font-family: Arial, Helvetica, sans-serif}
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: larger;
+}
+.style3 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: larger; color: #00FF00; }
+.style4 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #00FF00;
+	font-weight: bold;
+}
+-->
+</style></head>
+<%= image_tag("Taskbar2.png" )%>
+<body class="body">
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+				Your teacher has set you a task of researching the question ‘What has caused black rhinos to become an endangered species?’</br>
+
+				You have received an email from a group member about 3 websites that they have found on the topic and they want you to decide which website is the most useful.  
+
+
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+
+			<p>Click on each link to view the websites.</p> 
+			Rank the 3 websites in terms of their relevance to your teacher’s research question and their reliability.
+			</br>
+			</br>
+				<p><%= link_to "www.rhinosneedsaving.com", rhino_donate_path%> </p>
+
+				<p><%= link_to "www.answerallyourquestions.com", rhino_answers_path%></p>
+
+				<p> <%= link_to "www.universityofkenya.ac.ke", rhino_university_path%></p>
+			<p><%= link_to "Back to Task 2 email", new_user_website_path(@user),  :class=>"submit"%></p>
+			
+		</td>
+
+	<td bgcolor="#CCCCCC">
+		<table width="991" bordercolordark="#666666">
+		<tr  bordercolor="#000000" boarder="1" >
+		    <td width="755" colspan="991" bgcolor="#FFFFFF" class="style13 style1">  http://www.answerallyourquestions.com </td>
+		  </tr>
+		</table>
+		  <p><br /><%= image_tag("answersbanner.png", :size=>"991x80")%>
+		</p>
+		  <p>&nbsp;
+		    </p>
+		<table width="991"  bgcolor="#FFFFFF" border="1" bordercolor="#000000" RULES=NONE FRAME=BOX>
+		  <tr>
+		    <td width="16%"><%= image_tag("cartoon_avatar_3.jpg", :size=>"119x119")%>
+		</td>
+		    <td width="84%"><p class="style2">Why are there so few black rhinos?</p>
+		      <p class="style1">Our teacher has asked us to find out about what is causing certain animals to become endangered and I was just wondering if anybody knew why black Rhinos are endangered.<br />
+		    Help please my assignment is due tomorrow</p></td>
+		  </tr>
+		  <tr>
+		    <td><%= image_tag("cartoon_avatar_1.png", :size=>"122x122")%></td>
+		    <td><p class="style3">Best Answer - Chosen by voters</p>
+		      <p class="style1">Black Rhino's are endangered because people have been hunting them for many years. People kill rhinos for their horn because they think they can sell it for money, but they don't realise the damage they are causing. Rhino horn is primarily used to make ornaments and gifts. Poachers actually call Rhino Horn 'Black Gold' because its worth so much money. </p>
+		    <p class="style4">2 votes</p>    </td>
+		  </tr>
+		</table>
+		<br/>
+		<br/>
+
+		  <table width="991"  bgcolor="#FFFFFF" border="1" bordercolor="#000000" RULES=NONE FRAME=BOX>
+		  <tr>
+		    <td width="152"><%= image_tag("cartoon_avatar_4.png", :size=>"120x120")%>
+		</td>
+		    <td width="823" valign="top"><p class="style3">Other Answers</p>
+		      <p class="style1">Rhinos are endagered because of global warming - it is destroying their habitats. So is <br />
+		    polution. Rhinos enjoy the shade and toxic pollution is causing them to lose their shade.</p>      </td>
+		  </tr>
+		  </table>
+		  <br/>
+		  <table width="991"  bgcolor="#FFFFFF" border="1" bordercolor="#000000" RULES=NONE FRAME=BOX>
+		  <tr>
+		    <td width="152"><%= image_tag("cartoon_avatar_2.jpg", :size=>"121x121")%>
+		</td>
+		    <td width="823" class="style1">Deforestation and poaching are the main causes of Rhino deaths every year.</td>
+		  </tr>
+		  </table>
+		  <br/>
+		  <table width="991" bgcolor="#FFFFFF" border="1" bordercolor="#000000" RULES=NONE FRAME=BOX>
+		  <tr>
+		    <td width="152"><%= image_tag("cartoon_avatar_4.png", :size=>"120x120")%></td>
+		    <td width="823" class="style1">Black Rhino's are not Endagered why are you all being so silly</td>
+		  </tr>
+		</table>
+		</td>
+		</tr>
+		</table>
+<p ><%= link_to "Back to Task 2 email", new_user_website_path(@user),  :class=>"submit"%></p>
+	
+	
+	
+</body>

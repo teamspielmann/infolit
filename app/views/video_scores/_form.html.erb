@@ -1,0 +1,29 @@
+<%= form_for(@video_score) do |f| %>
+  <% if @video_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@video_score.errors.count, "error") %> prohibited this video_score from being saved:</h2>
+
+      <ul>
+      <% @video_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :searches %><br />
+    <%= f.number_field :searches %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.number_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Store location:</b>
+  <%= @part_db.store_location %>
+</p>
+
+<p>
+  <b>Store name:</b>
+  <%= @part_db.store_name %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @part_db.model %>
+</p>
+
+<p>
+  <b>Part:</b>
+  <%= @part_db.part %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @part_db.keywords %>
+</p>
+
+
+<%= link_to 'Edit', edit_part_db_path(@part_db) %> |
+<%= link_to 'Back', part_dbs_path %>

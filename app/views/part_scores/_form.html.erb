@@ -1,0 +1,45 @@
+<%= form_for(@part_score) do |f| %>
+  <% if @part_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@part_score.errors.count, "error") %> prohibited this part_score from being saved:</h2>
+
+      <ul>
+      <% @part_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vehicle_type %><br />
+    <%= f.number_field :vehicle_type %>
+  </div>
+  <div class="field">
+    <%= f.label :database_choice %><br />
+    <%= f.number_field :database_choice %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br />
+    <%= f.time_select :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :time_taken %><br />
+    <%= f.text_field :time_taken %>
+  </div>
+  <div class="field">
+    <%= f.label :searches_count %><br />
+    <%= f.number_field :searches_count %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.number_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

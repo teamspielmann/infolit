@@ -1,0 +1,755 @@
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	<script type="text/javascript">
+
+	function toggle_text(shown, hidden) {
+	       var e = document.getElementById(shown);
+	       var f = document.getElementById(hidden);
+	    if(e.style.display == 'inline') {
+	                  e.style.display = 'none';
+	                  f.style.display = 'inline';
+	      }
+	      else {
+	                  e.style.display = 'inline';
+	                  f.style.display = 'none';
+	      }
+	}
+	</script>
+</head>
+
+<div  id="shown_first" style="display:inline">
+	<p>&nbsp;</p>
+		
+	<p><h2>Welcome to Information Literacy Africa.</h2></p> 
+
+	<p>This website was designed by Chris Spielmann, a Masters student in the Department of Education at Hong Kong University, as a tool to measure a High School student’s Information Literacy skills.</p> 
+
+<p>	By completing the tasks on this website you are participating in a research study conducted by Chris for his MSc(ITE) dissertation. The purpose of this study is to investigate to what extent Kenyan High School Teachers are equipped to teach information literacy.
+</p>
+<p>	You will be asked to complete a brief questionnaire about the access you have to computers and training. This should take approximately 15 minutes to complete.
+	</p>
+<p>Your students will be completing 5 tasks that measure their Information Literacy and will then also complete a brief questionnaire. </p>
+
+<p>	The results of the students' Information Literacy assessment will be sent to the school within 3 weeks of the final school completing the assessment. These will show the information literacy levels of each of the students and how they compare to the average scores of the sample collected. A soft copy of the Dissertation will also be made available to the school upon completion.
+</p>
+<p>	By pressing accept, you indicate that you have read the above information and that you agree to participating in this study. If you have any questions before taking the study please send them to mail@ilafrica.org  
+</p>
+<p>	If you do not wish to participate in this study please navigate away from this page.
+</p>      
+	
+	<a style="cursor:pointer" onclick="toggle_text('shown_first', 'hidden_first')" class="question2" >
+	     	<p>&nbsp;
+			</p>	
+			 <p align="right"> <button>Accept</button> </p>
+	      </a>
+		
+	</div>
+
+<div id="hidden_first" style="display:none">
+
+
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @teacher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p class="heading"> Teacher Questionnaire </p> 
+<table cellpadding="10">
+	<tr>
+		<td class="questions">
+			<b>1) Select your school</b>
+		</td>
+		<td>			
+    <%= f.select :school, Teacher::SCHOOL, prompt: "School" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="questions">
+			
+			<b>2) What is your gender? </b>
+		</td>
+		<td>
+ <div class="field">
+     <%= f.select :gender, Teacher::GENDER, prompt: "Gender" %>
+  </div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="questions">
+		<b>	3) What is your age?</b>
+			
+		</td>
+		<td>			
+    <%= f.select :age, Teacher::AGE, prompt: "Age" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="questions">
+			<b>4) What is the main subject area that you teach? </b>
+		</td>
+		<td>			
+    <%= f.select :subject, Teacher::SUBJECT, prompt: "Subject" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="questions" valign="top">
+			<b>5) Do you have a computer at work?</b>
+		</td>
+		<td align="left">			
+    <%= f.radio_button :comp_work, "Desktop"%> <%=f.label :Yes_a_desktop_computer%> </br>
+	<%= f.radio_button :comp_work, "Laptop"%> <%=f.label :Yes_a_laptop_computer%> </br>
+	<%= f.radio_button :comp_work, "Both"%> <%=f.label :Yes_both_of_them%> </br>
+	<%= f.radio_button :comp_work, "No"%> <%=f.label :No%> </br>
+		</td>
+	</tr>
+</table>
+<table cellspacing ="30">
+	
+	<tr>
+		<td valign="top" colspan="2">
+			<table cellpadding="10">
+				<tr>	
+					<td colspan="5" class="questions">
+						<b>6) What best describes your level of technology expertise: </b>
+					</td>
+				</tr>
+				<tr>
+					<td width="300px"> 
+					</td>
+					<td bgcolor='#e9ebed'> <b>Very Uncomfortable</b>
+					</td>	
+					<td bgcolor='#dee2eb'> <b> Fairly Uncomfortable</b>
+					</td>
+					<td bgcolor='#e9ebed'> <b>Fairly Comfortable</b>
+					</td>
+					<td bgcolor='#dee2eb'> <b>Very Comfortable</b>
+					</td>
+				</tr>				
+				<tr>
+					<td align="right"> in personal use
+					</td>
+					<td align="center" bgcolor='#e9ebed'>
+			    <%= f.radio_button :personal_use, "v uncomfortable"%> 
+				</td>
+				<td align="center" bgcolor='#dee2eb'>
+				<%= f.radio_button :personal_use, "uncomfortable"%> 
+				</td>
+				<td align="center" bgcolor='#e9ebed'>
+				<%= f.radio_button :personal_use, "comfortable"%> 
+				</td>
+				<td align="center" bgcolor='#dee2eb'>
+				<%= f.radio_button :personal_use, "v comfortable"%>
+				</td>
+			</tr>
+			
+				<tr>
+					<td align="right"> in the classroom 
+					</td>
+					<td align="center" bgcolor='#e9ebed'>
+			    <%= f.radio_button :professional_use, "v uncomfortable"%> 
+				</td>
+				<td align="center" bgcolor='#dee2eb'>
+				<%= f.radio_button :professional_use, "uncomfortable"%> 
+				</td>
+				<td align="center" bgcolor='#e9ebed'>
+				<%= f.radio_button :professional_use, "comfortable"%> 
+				</td>
+				<td align="center" bgcolor='#dee2eb'>
+				<%= f.radio_button :professional_use, "v comfortable"%>
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>	
+	
+	
+	<tr>
+		<td colspan='2' class="questions">
+			<b>7) Apart from in your lessons, where else do the students that you teach gain ICT skills?</b></br>
+			<%= f.text_area :other_sources_student,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+	
+	
+  	<tr>
+		<td collspan="2">
+			<table >
+				<tr>
+					<td colspan="7" class="questions"> 8) How often is the use of technology described below present in your work?
+					</td>
+				</tr>
+				<tr>
+					<td width="315px"  bgcolor="white">	
+					</td>
+					<td width="300px">	
+					</td>	
+					<td align="center" > <b>Never</b>	
+					</td>
+					<td align="center" ><b> A Few Times </br>a Year</b>
+					</td>
+					<td align="center" ><b> Monthly</b>
+					</td>
+					<td align="center" ><b> Weekly</b>
+					</td>
+					<td align="center" ><b> Daily</b>
+					</td>
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> To organise and manage your work	
+					</td>	
+					<td align="center" > <%= f.radio_button :eight1, "1"%> 
+					</td>
+					<td align="center"><%= f.radio_button :eight1, "2"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eight1, "3"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eight1, "4"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eight1, "5"%> 
+					</td>
+				</tr>		
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> To prepare lessons
+					</td>	
+						<td align="center" > <%= f.radio_button :eight2, "1"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :eight2, "2"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :eight2, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight2, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight2, "5"%> 
+						</td>
+				
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To find digital learning resources
+					</td>	
+						<td align="center"> <%= f.radio_button :eight3, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight3, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight3, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight3, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight3, "5"%> 
+						</td>
+					
+				</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To design and produce your own digital learning resources
+					</td>	
+						<td align="center"> <%= f.radio_button :eight4, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight4, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight4, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight4, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight4, "5"%> 
+						
+						</td>
+					
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To communicate with colleagues
+					</td>	
+						<td align="center"> <%= f.radio_button :eight5, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight5, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight5, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight5, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight5, "5"%> 
+						</td>
+					</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To communicate with your pupils
+					</td>	
+						<td align="center"> <%= f.radio_button :eight6, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight6, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight6, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight6, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight6, "5"%> 
+						</td>
+					</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To communicate with school management and educational administrations
+					</td>	
+						<td align="center"> <%= f.radio_button :eight7, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight7, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight7, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight7, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight7, "5"%> 
+						</td>
+					</tr>				
+				<tr bgcolor='#dee2eb'>
+					<td width="300px" bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To analyze student performance data
+					</td>	
+						<td align="center"> <%= f.radio_button :eight8, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight8, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight8, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight8, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eight8, "5"%> 
+						</td>
+					</tr>
+				
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td collspan="2">
+			<table >
+				<tr>
+					<td colspan="7" class="questions"> 9) How often is the use of technology described below present in your teaching?
+					</td>
+				</tr>
+				<tr>
+					<td width="315px"  bgcolor="white">	
+					</td>
+					<td width="300px">	
+					</td>	
+					<td align="center" > <b>Never</b>	
+					</td>
+					<td align="center" ><b> A Few Times </br>a Year</b>
+					</td>
+					<td align="center" ><b> Monthly</b>
+					</td>
+					<td align="center" ><b> Weekly</b>
+					</td>
+					<td align="center" ><b> Daily</b>
+					</td>
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> To facilitate teaching specific concepts or skills	
+					</td>	
+					<td align="center" > <%= f.radio_button :nine1, "1"%> 
+					</td>
+					<td align="center"><%= f.radio_button :nine1, "2"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :nine1, "3"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :nine1, "4"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :nine1, "5"%> 
+					</td>
+				</tr>		
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> To support various student learning styles and to personalise learning
+					</td>	
+						<td align="center" > <%= f.radio_button :nine2, "1"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :nine2, "2"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :nine2, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine2, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine2, "5"%> 
+						</td>
+				
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To support activities that facilitate higher-order thinking
+					</td>	
+						<td align="center"> <%= f.radio_button :nine3, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine3, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine3, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine3, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine3, "5"%> 
+						</td>
+					
+				</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To support creativity
+					</td>	
+						<td align="center"> <%= f.radio_button :nine4, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine4, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine4, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine4, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine4, "5"%> 
+						
+						</td>
+					
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	To foster pupils' ability to use technology in their learning
+					</td>	
+						<td align="center"> <%= f.radio_button :nine5, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine5, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine5, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine5, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :nine5, "5"%> 
+						</td>
+					</tr>
+			</table>
+		</td>
+	</tr>
+
+
+  	<tr>
+		<td collspan="2">
+			<table >
+				<tr>
+					<td colspan="7" class="questions"> 10) How often do you use the technological devices listed below in your teaching?
+					</td>
+				</tr>
+				<tr>
+					<td width="315px"  bgcolor="white">	
+					</td>
+					<td width="300px">	
+					</td>	
+					<td align="center" > <b>Never</b>	
+					</td>
+					<td align="center" ><b> A Few Times </br>a Year</b>
+					</td>
+					<td align="center" ><b> Monthly</b>
+					</td>
+					<td align="center" ><b> Weekly</b>
+					</td>
+					<td align="center" ><b> Daily</b>
+					</td>
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> Personal Computers	
+					</td>	
+					<td align="center" > <%= f.radio_button :ten1, "1"%> 
+					</td>
+					<td align="center"><%= f.radio_button :ten1, "2"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :ten1, "3"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :ten1, "4"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :ten1, "5"%> 
+					</td>
+				</tr>		
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> Digital Cameras
+					</td>	
+						<td align="center" > <%= f.radio_button :ten2, "1"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :ten2, "2"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :ten2, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten2, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten2, "5"%> 
+						</td>
+				
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Mobile Phones
+					</td>	
+						<td align="center"> <%= f.radio_button :ten3, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten3, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten3, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten3, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten3, "5"%> 
+						</td>
+					
+				</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Projection
+					</td>	
+						<td align="center"> <%= f.radio_button :ten4, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten4, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten4, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten4, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten4, "5"%> 
+						
+						</td>
+					
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	The internet
+					</td>	
+						<td align="center"> <%= f.radio_button :ten5, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten5, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten5, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten5, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten5, "5"%> 
+						</td>
+					</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Learning management systems/VLE (WebCT, Moodle, etc)
+					</td>	
+						<td align="center"> <%= f.radio_button :ten6, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten6, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten6, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten6, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :ten6, "5"%> 
+						</td>
+					</tr>
+			</table>
+		</td>
+	</tr>
+					
+
+
+  	<tr>
+		<td collspan="2">
+			<table >
+				<tr>
+					<td colspan="7" class="questions"> 11) How often do the students use the technological devices listed below in your teaching?
+					</td>
+				</tr>
+				<tr>
+					<td width="315px"  bgcolor="white">	
+					</td>
+					<td width="300px">	
+					</td>	
+					<td align="center" > <b>Never</b>	
+					</td>
+					<td align="center" ><b> A Few Times </br>a Year</b>
+					</td>
+					<td align="center" ><b> Monthly</b>
+					</td>
+					<td align="center" ><b> Weekly</b>
+					</td>
+					<td align="center" ><b> Daily</b>
+					</td>
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> Personal Computers	
+					</td>	
+					<td align="center" > <%= f.radio_button :eleven1, "1"%> 
+					</td>
+					<td align="center"><%= f.radio_button :eleven1, "2"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eleven1, "3"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eleven1, "4"%> 
+					</td>
+					<td align="center" ><%= f.radio_button :eleven1, "5"%> 
+					</td>
+				</tr>		
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> Digital Cameras
+					</td>	
+						<td align="center" > <%= f.radio_button :eleven2, "1"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :eleven2, "2"%> 
+						</td>
+						<td align="center" ><%= f.radio_button :eleven2, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven2, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven2, "5"%> 
+						</td>
+				
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Mobile Phones
+					</td>	
+						<td align="center"> <%= f.radio_button :eleven3, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven3, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven3, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven3, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven3, "5"%> 
+						</td>
+					
+				</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Projection
+					</td>	
+						<td align="center"> <%= f.radio_button :eleven4, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven4, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven4, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven4, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven4, "5"%> 
+						
+						</td>
+					
+				</tr>
+				<tr bgcolor='#e9ebed'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	The internet
+					</td>	
+						<td align="center"> <%= f.radio_button :eleven5, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven5, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven5, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven5, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven5, "5"%> 
+						</td>
+					</tr>
+				<tr bgcolor='#dee2eb'>
+					<td width="300px"  bgcolor="white">	
+					</td>
+					<td width="300px" align="right" class="row"> 	Learning management systems/VLE (WebCT, Moodle, etc)
+					</td>	
+						<td align="center"> <%= f.radio_button :eleven6, "1"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven6, "2"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven6, "3"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven6, "4"%> 
+						</td>
+						<td align="center"><%= f.radio_button :eleven6, "5"%> 
+						</td>
+					</tr>
+			</table>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td colspan='2' class="questions">
+			<b>12) What formal ICT training have you received?</b></br>
+			<%= f.text_area :formal_training,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+		
+	<tr>
+		<td colspan='2' class="questions">
+			<b>13) What informal ICT training have you received?</b></br>
+			<%= f.text_area :informal_training,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan='2' class="questions">
+			<b>14) What are your perceived training needs?</b></br>
+			<%= f.text_area :training_needs,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+
+
+
+	<tr>
+		<td colspan='2' align="right">
+			<div class="actions">
+		    <%= f.submit "Submit Teacher Questionnaire"%>
+		  </div>
+		</td>
+	</tr>
+
+<% end %>
+</div>

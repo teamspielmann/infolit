@@ -1,0 +1,58 @@
+<%= form_for([@user,@information]) do |f| %>
+  <% if @information.errors.any? %>
+    <div id="error_explanation">
+      <h2>Please fill in the following fields</h2>
+
+      <ul>
+      <% @information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table  cellpadding="10">
+<tr>
+<td rowspan="5" width="25%" bgcolor="#CCCCCC" class="instructions">
+	</br>
+		<b>Instructions</b>
+	</br>
+	</br>	
+	Please enter your personal information by using the menus provided.
+	</br>
+	</br>
+</td>
+
+<td class="question2">
+
+
+	  <div>
+	    <%= f.label :full_name %>: 
+	   
+	  </div>
+</td>
+<td> <%= f.text_field :full_name %></td>
+</tr>
+<tr><td class="question2"><div >
+   <%= f.label :form %>:</div></td>
+	<td class="question1"><%= f.select :form, Information::FORMS, prompt: "Select Form" %>  </td>
+	</tr>
+<tr><td class="question2">	 <div>
+	    <%= f.label :age %>:</div></td>
+	<td class="question1">	 <%= f.select(:age, [['11',11], ['12', 12],['13',13],['14',14],['15',15],['16',16],['17',17],['18',18], ['19',19],['20',20],['21',21], ['22',22],['23',23],['24',24],['25+',25]], prompt: "select age") %></td>
+	</tr>
+<tr ><td class="question2">	<div>
+    <%= f.label :gender %>:</div></td>
+	<td class="question1">	<%= f.select(:gender, Information::GENDER, prompt: "Gender")%></td>
+	</tr>
+<tr ><td class="question2"></td>
+	<td class="submit" >	<div>
+	    <%= f.submit "Next Task" %>
+	  </div></td>
+
+	</tr>
+	  
+	<% end %>
+
+</table>

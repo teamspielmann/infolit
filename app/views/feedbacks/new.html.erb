@@ -1,0 +1,19 @@
+<%= form_for([@user, @feedback]) do |f| %>
+
+<p class="task"> Thank you for completing the Questionnaire</p>
+
+<p class="task"> If you would like to view the results of your test please click Test Results. Alternatively please click Log Out</p>
+
+<table width="100%" align="center">
+	<tr>
+		<td width="50%" align="center">
+			<%= link_to 'Log Out', logout_path, :style => 'float:center',  :class=>"nextbutton" %>
+		</td>
+		<td>
+			<div width="50%" align="center" class="actions">
+			    <%= f.submit 'Test Results' %>
+			</div>
+			<% end %>
+		</td>
+	</tr>
+</table>

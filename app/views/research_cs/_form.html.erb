@@ -1,0 +1,161 @@
+<%= form_for([@user, @research_c]) do |f| %>
+  <% if @research_c.errors.any? %>
+    <div id="error_explanation">
+      <h2> Please select one of the sources</h2>
+
+      <ul>
+      <% @research_c.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table  cellpadding="10">
+<tr>
+<td  width="25%" bgcolor="#CCCCCC" class="instructions">
+	</br>
+	<b>Instructions:</b></br> 
+		</br>
+
+				You are entering an 
+				essay competition for the
+				Student Writers Forum. 
+				This involves selecting 
+				a focused research 
+				question which you can answer 
+				within the 2000 word limit.
+
+
+
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			</br>Select the most suitable 
+			Research question
+		</br>
+		</br>
+			Select the most appropriate 
+			website from the Web search.
+		</br>
+		</br>
+			Identify a primary source.
+
+		</td>
+
+
+
+		<td>
+			<table>
+		  		<tr>
+					<td width="30%">
+						<%= image_tag("SWF.png", :size=>"361x142")%>
+					</td>
+					<td>
+						<p align="left"><h2>Student Writers Forum Essay Competition</h2></p>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2">
+						Students should write an essay about the topic of 'Clean water'. This should be no longer than 2000 words. Students Essays will be judged by the quality of their research question (this should be a focussed question which can be answered within the word count), the sources that they use to back up their arguments should be both reliable and relevant. 
+					</td>
+				</tr>
+			</table>
+
+<table>
+<tr>
+	<td > 
+		</br></br></br>
+		<a class="question2">An internet search for "clean water Kenya" brought you to the following 4 websites. </a>
+			</br></br>
+
+		<a class="question">	Select the website that would provide a primary source. </a>
+
+</tr>
+</table>
+<table>
+<tr>
+<td align="right" valign="top" width="20%"> </br></br><%= f.radio_button(:score, "0") %> 
+	</td>	
+	<td></br> 
+		<a class="searchtitle"> Kenya Needs Clean Water </a>
+		</br> 
+		<a class="url"> www.life-in-kenya.com/clean_water_article_June_2001 </a>
+		</br>
+		 	... In this issue of Life in Kenya we follow how celebrities 
+		</br>
+		have taken an interest in the issue of sanitation and 
+		</br>
+			water in some of Kenya's most arid areas ...
+	</td>
+</tr>
+
+<tr>
+<td align="right" valign="top" width="20%"> </br></br><%= f.radio_button(:score, "0") %> 
+	</td>	
+	<td> </br>
+		 <a class="searchtitle"> Why don't people have clean water </a>
+		</br> 
+		<a class="url"> www.questions_answered.com/Q/why_dont_peo... </a>
+		</br>
+		 	Ask any question and have it answered by like minded  
+		</br>
+	 		peers. You can contribute to our community simply by 
+		</br>
+		 	signing up, then ask and answer as many questions as ...
+	</td>
+</tr>
+
+<tr>
+	<td align="right" valign="top" width="20%"> </br></br><%= f.radio_button(:score, "0") %> 
+	</td>	
+	<td></br> 
+		<a class="searchtitle"> Exploring the water crisis in Kenya: Causes ... </a>
+		</br> 
+		<a class="url"> www.academicjournals.org </a>
+		</br>
+		 	... team of researchers from Oxford University have spent two  
+		</br>
+			years assessing the various factors involved in providing 
+		</br>
+			access to clean drinking water to rural communities in ...
+	</td>
+</tr>
+
+<tr>
+<td align="right" valign="top" width="20%"> </br></br><%= f.radio_button(:score, "50") %> 
+	</td>	
+	<td> </br>
+		<a class="searchtitle"> Kenya's water. One man's experience of life ...</a>
+		</br> 
+		<a class="url"> www.youtube.com/Kenyaswater </a>
+		</br>
+		 	Video of a man from Northern Kenya sharing his 
+		</br>
+		experience of difficulties of living with a limited supply
+		</br>
+		of clean drinking water for his family and cattle.
+	</td>
+</tr>
+
+
+
+</table>
+<table align="right">
+<tr>
+	<td>
+		</td>
+	<td class="submit"  >	
+  <div>
+    <%= f.submit  "Next Task"%>
+  </div>
+
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+<% end %>

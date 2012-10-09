@@ -1,0 +1,86 @@
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	<script type="text/javascript">
+
+	function toggle_text(shown, hidden) {
+	       var e = document.getElementById(shown);
+	       var f = document.getElementById(hidden);
+	    if(e.style.display == 'inline') {
+	                  e.style.display = 'none';
+	                  f.style.display = 'inline';
+	      }
+	      else {
+	                  e.style.display = 'inline';
+	                  f.style.display = 'none';
+	      }
+	}
+	</script>
+</head>
+
+
+
+<div  id="shown_first" style="display:inline">
+	<p>&nbsp;</p>
+
+	<p><h2>Welcome to Information Literacy Africa.</h2></p> 
+
+	<p>This website was designed by Chris Spielmann, a Masters student in the Department of Education at Hong Kong University, as a tool to measure a High School student’s Information Literacy skills.</p> 
+
+<p>	By completing the tasks on this website you are participating in a research study conducted by Chris for his MSc(ITE) dissertation. The purpose of this study is to investigate to what extent Kenyan High School Teachers are equipped to teach information literacy.
+</p>
+<p>	You will be asked to complete 5 tasks each taking 3-5 minutes. You will then be asked to fill in a brief questionnaire about your access to computers both in school and outside school. The total time should take approximately 40 minutes. You will be given the option to view your individual results at the end of the process.
+</p>
+<p>	The results of the school will be sent to your head teacher within 3 weeks of the final school completing the assessment. These will show the information literacy levels of each of the students and how they compare to the average scores of the sample collected.
+</p>
+<p>	By pressing accept, you indicate that you have read the above information and that you agree to participating in this study. If you have any questions before taking the study please send them to mail@ilafrica.org  
+</p>
+<p>	If you do not wish to participate in this study please navigate away from this page.
+</p>      
+	
+	<a style="cursor:pointer" onclick="toggle_text('shown_first', 'hidden_first')" class="question2" >
+	     	<p>&nbsp;
+			</p>	
+			 <p align="right"> <button>Accept</button> </p>
+	      </a>
+		
+	</div>
+
+<div id="hidden_first" style="display:none">
+
+
+<h2>Welcome</h2>
+
+
+
+
+<table cellpadding="10px">
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" class="instructions">
+			<p> <b>Instructions</b></p>
+<p>First select your school and click <button type="button" disabled="disabled"> Select School</button></p>
+<p> Then select one of the usernames.</p>
+</td>
+<td valign="top">
+<p><%= form_tag session_path do %>
+
+<%= select_tag :user, options_for_select( [["School",""], "Chebisaas", "Moi Girls", "South Island School"], :disabled=>"School") %>
+
+
+	<%= submit_tag "Select School"%>
+	</p>
+
+
+	<%end%>
+
+
+</td>
+</table>
+
+</div>

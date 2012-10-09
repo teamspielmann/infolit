@@ -1,0 +1,47 @@
+</br>
+</br>
+
+<table cellpadding="10px" >
+	
+		<tr bgcolor="#CCCCCC">
+			<td class="instructions">
+				
+	<p> <b>Instructions</b></p>
+				
+	<p>Your school is <b><%=@username%> </b> </p>
+	<p>If this is incorrect please click back, otherwise move on to Next Task.</p>
+
+
+</td>
+<td bgcolor="#FFFFFF" valign="bottom" align="left" width="50%"><%= form_for(@user) do |f| %>
+	</br>
+	
+	</br> <p align="right"> <%= link_to "Back", logout_path, :class=>"nextbutton"%> 
+	
+	    <%= f.submit "Next Task"%></p>
+	
+	<% end %> 
+</td>
+</tr>
+
+</table>
+
+
+
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+  
+
+
+

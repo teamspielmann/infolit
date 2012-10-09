@@ -1,0 +1,111 @@
+<head>
+<style type="text/css">
+<!--
+.style4 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FF0000;
+}
+.style7 {font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #FF0000; font-size: larger; }
+.style9 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+.style13 {font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+</head>
+
+<%= image_tag("Taskbar2.png" )%>
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+				Your teacher has set you a task of researching the question ‘What has caused black rhinos to become an endangered species?’</br>
+
+				You have received an email from a group member about 3 websites that they have found on the topic and they want you to decide which website is the most useful.  
+
+
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+
+			<p>Click on each link to view the websites.</p> 
+			Rank the 3 websites in terms of their relevance to your teacher’s research question and their reliability.
+			</br>
+			</br>
+				<p><%= link_to "www.rhinosneedsaving.com", rhino_donate_path%> </p>
+
+				<p><%= link_to "www.answerallyourquestions.com", rhino_answers_path%></p>
+
+				<p> <%= link_to "www.universityofkenya.ac.ke", rhino_university_path%></p>
+			<p><%= link_to "Back to Task 2 email", new_user_website_path(@user),  :class=>"submit"%></p>
+			
+		</td>
+
+	<td class="orangebackground">
+		<table  width="991">
+		<tr  >
+		    <td width="755" colspan="991" bordercolor="000000" boader="1"  bgcolor="#FFFFFF"><span class="style13">  http://www.rhinosneedsaving.com </span></td>
+		  </tr>
+		  </table>
+		<br />
+		<%= image_tag("donatebanner.png", :size=>"991x80")%>
+		<table width="991">
+
+		  <tr><td colspan="2">
+		    <p class="style5">Introduction      </p>
+		    <p class="style4">Rhinos are an endangered species and are at serious risk of 
+		      becoming endangeered in our life time. They are losing their 
+		      habitats and of being hunted by poachers and you can make 
+		      a difference. We are a group of concerned students from 
+		      California High school and are raising money for a conservation
+		    charity to help stop poachers from killing rhinos.  </p></td>
+		  <td width="316"><%= image_tag("rhino1.jpg", :size=>"288x215")%>
+			</td>
+		  </tr>
+		  <tr>
+		  <td width="331"><%= image_tag("rhino4.jpg", :size=>"320x209")%>
+		 </td>
+		  <td colspan="2"><p class="style7">What is killing our rhinos?
+
+		    </p>
+		    <p><span class="style5">Poachers<br/>
+		      </span><span class="style9">Rhinos are mostly at risk from poachers who want to sell
+		      their horns.</span></p>
+		    <p><span class="style5">Habitat loss <br/>
+		      </span><span class="style9">Rhinos are also losing their habitats due to farming and 
+		      population growth.      </span>
+
+		    <p><span class="style5"> Politic issues<br/>
+		    </span><span class="style4">There are several political issues too such as how well 
+		      poaching laws are enforced and whether there is war in
+		    the country. </span></p>    </td>
+		  </tr>
+		  <tr>
+		    <td><p class="style5">What you can do</p>
+		      <p class="style4">Join the cause now you can sign our <br />
+		        petition by clicking here</p>
+		    <p class="style4">You can also donate by clicking here </p></td>
+		    <td colspan="2"><br /><br /><label>
+		      <input name="Button" type="button" class="style5" id="button" value="Petition" style="background-color:#c00; color:#fff;"/>
+
+		    </label>
+		    <br />
+		    <br />
+		    <label>
+		      <input name="Button" type="button" class="style5" id="button" value="Donate" style="background-color:#c00; color:#fff;"/>
+
+		    </label>
+		    </td>
+		  </tr>
+		</table>
+	
+<p><%= link_to "Back to Task 2 email", new_user_website_path(@user),  :class=>"submit"%></p>
+	
+	
+

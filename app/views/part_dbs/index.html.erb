@@ -1,0 +1,31 @@
+<h1>Listing part_dbs</h1>
+
+<table>
+  <tr>
+    <th>Store location</th>
+    <th>Store name</th>
+    <th>Model</th>
+    <th>Part</th>
+    <th>Keywords</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @part_dbs.each do |part_db| %>
+  <tr>
+    <td><%= part_db.store_location %></td>
+    <td><%= part_db.store_name %></td>
+    <td><%= part_db.model %></td>
+    <td><%= part_db.part %></td>
+    <td><%= part_db.keywords %></td>
+    <td><%= link_to 'Show', part_db %></td>
+    <td><%= link_to 'Edit', edit_part_db_path(part_db) %></td>
+    <td><%= link_to 'Destroy', part_db, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Part db', new_part_db_path %>

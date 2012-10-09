@@ -1,0 +1,83 @@
+
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style></head>
+
+<%= image_tag("Taskbar5.png" )%>
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+			
+				<p>This is not a timed Task</p>
+				
+				You have been asked to present to a group of students from another class ‘what has caused the Black Rhino to become an endangered species?’ You need to create a presentation slide explaining what you have found out from your research about black Rhinos. You have decided to use the information on the webpage from the University of Kenya. 
+
+				
+				
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			<p>Read the information provided by the University of Kenya website</p>
+			<p class="nextbutton"> Create Slide</p>
+
+			<p>Select the best title for your presentation slide.</p>
+			<p>Select the 3 bullet points from the list that best summarise the information needed for your presentation.</p>
+			<p> You may click on <p class="nextbutton">Back to Information</p> to return to this page at any stage.</p>
+	
+			
+		</td>
+
+	<td bgcolor="#FFFFFF">
+		
+		<table width="900" bordercolor="#000000" >
+		<tr  >
+		    <td width="755" colspan="991"  bgcolor="#FFFFFF"><span class="style13 style4">  http://www.universityofkenya.ac.ke </span></td>
+		  </tr>
+		</table>
+		<br />
+
+		<%= image_tag("Universtiy of Kenya banner.png", :size=>"900x126")%>
+		<table width="100%">
+		  <tr>
+		    <td width="79%">	<%= image_tag("buttons.png", :size=>"700x40")%></td>
+		    <td width="21%">&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td><span class="style1">Departments&gt;Biology&gt;conservation&gt;BlackRhino</span></td>
+		    <td>&nbsp;</td>
+		  </tr>
+		  <tr>
+		    <td valign="top"><p align="center" class="style2">&nbsp;</p>
+		      <p align="left" class="style2"><strong>The Black Rhino </strong></p>
+		      <p><span class="style3">Humans have been the main cause of rhinos becoming an endangered species. In Kenya alone the number of rhinos has dropped from 20,000 in the 1970s to 280 in the 1980s. The main cause of this has been the illegal trade of rhino horn. Rhino</span><span class="style3"> horn is often poached for the production of traditional Chinese medicine or the for making Jambiya handles. </span></p>
+		      <p class="style3">&nbsp;</p>
+		      <p class="style3">Rhino horn has been an integral part of Chinese traditional medicine for thousands of years and can be used to treat many different kinds of conditions. The main consumers of rhino horn are Hong Kong, China, Taiwan, Singapore, Japan, South Korea, Malaysia, Brunei, Macau, and Thailand. In the 1960s and 1970s, Hong Kong was the world’s largest importer of rhino horn. Although the government officially banned all imports in 1979, rhino horn was smuggled in from various neighbouring countries. </p>
+		      <p class="style3">Jambiyas are ornamental daggers that can be found in Arab countries and is especially associated with Yemen.    </p>
+		    <p class="style3">&nbsp;</p>
+		    <p class="style3">Besides poaching Rhinos are also threatened by loss of habitat and political conflict. Over the past 100 years, the Rhinos natural habitat has been drastically reduced due to clearance of land for human settlement or agricultural production as well as logging (both legal and illegal). Political conflict itself does not cause Rhinos a threat however in countries where conflict is occurring it is extremely difficult to control poaching and despite the best efforts of conservationists and concerned local people, poachers are still able to operate. </p></td>
+		    <td><br/>
+		        <br/>
+		        <br/>
+			<%= image_tag("Rhino3.jpg", :size=>"197x129")%><br/>
+		        			<%= image_tag("TCMimage.png", :size=>"197x197")%><br/>
+		        			<%= image_tag("Rhino5.jpg", :size=>"197x131")%> <br/>
+		        			<%= image_tag("rhino2.jpg", :size=>"197x148")%>  </p>
+		    </td>
+		  </tr>
+		</table>
+		<table class="submit">
+			<tr><td ><%= link_to "Create Slide", new_user_present_title_path(@user),  :class=>"nextbutton"%>
+				</td>
+				</tr>
+				</table>
+	

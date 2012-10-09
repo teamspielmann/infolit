@@ -1,0 +1,86 @@
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+				<p>Your Biology teacher has been teaching you about how vaccinations work and what factors make an immunisation programme effective.</p><p> He asked you to find out about the impact of vaccinations on the incidence of Tuberculosis in South Africa. He wants you to find a 90 minute documentary on this topic using the library search engine on the University of Kenya's website.</p> 
+			
+
+				
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			<p> Use the search engine on the University of Kenya website to find the video that he is referring to.</p>
+			<p> Once you have found the correct video click <INPUT TYPE="RADIO" NAME="XXXX" VALUE="X" DISABLED> and then click <button type="button" disabled="disabled"> Submit</button> at the bottom of the search results.</p>
+			<p>&nbsp;</br></br></p>
+		
+		</td>
+		<td bgcolor="#FFFFFF" valign="top" >
+
+			<table width="900" bordercolor="#000000" >
+			<tr  >
+			    <td width="755" colspan="991"  bgcolor="#FFFFFF"><span >  http://www.universityofkenya.ac.ke </span></td>
+			  </tr>
+			</table>
+			<br />
+
+			<%= image_tag("Universtiy of Kenya banner.png", :size=>"900x126")%>
+			<table width="100%">
+			  <tr>
+			    <td width="79%">	<%= image_tag("buttons.png", :size=>"700x40")%></td>
+			    <td width="21%">&nbsp;</td>
+			  </tr>
+			  <tr>
+			    <td><span class="style1">Library&gt;Search</span></td>
+			    <td>&nbsp;</td>
+			  </tr>
+		</table>
+		<table>
+			  <tr>
+				<td >
+			 		<p>&nbsp;</br></br></p>
+					<p> You submitted:</p>
+				</td>
+			  </tr>
+						
+			<tr>
+				<td width="20%"></td>
+				<td  width="70%" class="results"><%= @video_submit.title %></td> 
+				<td width="10%"></td>
+			</tr>
+
+			<tr><td></td>
+				<td class="time"> <%= @video_submit.length %></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td > <%= @video_submit.description %><p>&nbsp;</p></td>
+				<td></td>
+			</tr>
+			<tr>
+				
+				<td colspan="2">  <p> This is not the video that your teacher wanted you to find.</br></br>
+				Try searching again. <%=f.submit "Search again", :name => :back_to_search %> </p></td>
+				<td></td>
+			</tr>		
+			<tr>
+
+				<td colspan="2">  	<%if session[:search_number]>5%>
+					<p class="giveup" >If you would like to stop this task and move on to the next task click here <%= submit_tag "Next Task", :name => :give_up, :class=> "nextbutton" %> </p>
+					<%end%></td>
+				<td></td>
+			</tr>	
+		</table>			
+		
+	</td>
+	</tr>
+				
+	
+</table>
+
+
+
+

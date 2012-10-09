@@ -1,0 +1,51 @@
+<h1>Listing videos</h1>
+
+<div>
+<%= form_tag videos_path, :method => 'get' do %>
+<p> <%= search_field_tag :search, params[:search] %>
+<%= submit_tag "search", :name => nil %>
+</p>
+<%end%>
+
+
+
+</div>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Length</th>
+    <th>Chosen</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @videos.each do |video| %>
+  <tr>
+    <td><%= video.title %></td>
+    <td><%= video.description %></td>
+    <td><%= video.length %></td>
+    <td><%= video.chosen %></td>
+    <td><%= link_to 'Show', video %></td>
+    <td><%= link_to 'Edit', edit_video_path(video) %></td>
+    <td><%= link_to 'Destroy', video, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Video', new_video_path %>
+
+
+<%= form_tag new_video_score_path do %>
+<p><% @searches.each do |search| %></p> 
+<p><%= search.title %></br><%= search.length %></br><%= search.description %></p>
+
+<div class="field">	<%= radio_button_tag(:searches, search.chosen)%></div><div class="actions"><%= submit_tag 'Submit this video' %></div> 
+
+
+<%end%>
+<%end%>

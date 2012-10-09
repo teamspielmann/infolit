@@ -1,0 +1,121 @@
+<%= form_for([@user, @research_a]) do |f| %>
+<% if @research_a.errors.any? %>
+  <div id="error_explanation">
+    <h2>Please select one of the Research Questions</h2>
+
+    <ul>
+    <% @research_a.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table  cellpadding="10">
+<tr>
+<td rowspan="6" width="25%" bgcolor="#CCCCCC" class="instructions">
+	</br>
+	<b>Instructions:</b></br> 
+		</br>
+
+		You are entering an 
+		essay competition for the
+		Student Writers Forum. 
+		This involves selecting 
+		a focused research 
+		question which you can answer 
+		within the 2000 word limit.
+		
+
+
+	</br>
+	</br>
+		<b>You must:</b>
+	</br>
+	</br>Select the most suitable 
+	Research question
+</br>
+</br>
+	Select the most appropriate 
+	website from the Web search.
+</br>
+</br>
+	Identify a primary source.
+		
+</td>
+
+
+
+<td>
+	<table>
+  		<tr>
+			<td width="30%">
+				<%= image_tag("SWF.png", :size=>"361x142")%>
+			</td>
+			<td>
+				<p align="left"><h2>Student Writers Forum Essay Competition</h2></p>
+			</td>
+		</tr>	
+		<tr>
+			<td colspan="2">
+				Students should write an essay about the topic of 'Clean water'. This should be no longer than 2000 words. Students Essays will be judged by the quality of their research question (this should be a focussed question which can be answered within the word count), the sources that they use to back up their arguments should be both reliable and relevant. 
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td class="question2">
+				</br>
+				</br>
+				</br>
+				<b>Select the best Research Question: </b>
+			</td>
+		</tr>
+	
+ 
+
+
+
+<tr>
+	
+<td>   </td>
+
+<td class="question2"><%= f.radio_button(:score, "5") %> <%= f.label(:score_0, "Is Clean water important?") %></td>
+</tr>
+
+<tr>
+<td class="question2">  	</td>
+<td class="question2"><%= f.radio_button(:score, "0") %>	<%= f.label(:score_0, "What is Clean water?")%></td>
+</tr>	
+	
+	
+<tr>	
+<td class="question2">	  	</td>
+<td class="question2">	 <%= f.radio_button(:score, "50") %>	<%= f.label(:score_20, "What factors have affected access to clean water in Northern Kenya in 
+	the past 20 years?") %></td>
+</tr>
+
+<tr>
+<td class="question2">	</td>
+<td class="question2"><%= f.radio_button(:score, "30") %>	<%= f.label(:score_10, "Why can’t everybody in Northern Kenya access clean water?")%></td>
+</tr>
+
+
+
+</table>
+
+<table align="right">
+<tr>
+	<td>
+		</td>
+	<td class="submit" >	
+  <div >
+    <%= f.submit  "Next"%>
+  </div>
+	</td>
+</tr>
+</table>
+</table>
+<% end %>
+
+	

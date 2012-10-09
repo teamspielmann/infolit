@@ -1,0 +1,2 @@
+module ResearchAsHelper
+end

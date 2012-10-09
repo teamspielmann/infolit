@@ -1,0 +1,2 @@
+$('#searchpages').html('<%= escape_javascript render(@searches_paginated) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@searches_paginated, :remote => true).to_s) %>');

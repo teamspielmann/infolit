@@ -1,0 +1,139 @@
+
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	<script type="text/javascript">
+
+	function toggle_text(shown, hidden) {
+	       var e = document.getElementById(shown);
+	       var f = document.getElementById(hidden);
+	    if(e.style.display == 'inline') {
+	                  e.style.display = 'none';
+	                  f.style.display = 'inline';
+	      }
+	      else {
+	                  e.style.display = 'inline';
+	                  f.style.display = 'none';
+	      }
+	}
+	</script>
+	</head>
+
+<%= image_tag("Taskbar5.png" )%>
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+			
+				<p>This is not a timed Task</p>
+
+				You have been asked to present to a group of students from another class ‘what has caused the Black Rhino to become an endangered species?’ You need to create a presentation slide explaining what you have found out from your research about black Rhinos. You have decided to use the information on the webpage from the University of Kenya. 
+
+				
+				
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			<p>Based on the information provided by the University of Kenya website</p>
+			
+			<p>Select the best title for your presentation slide.</p> <p>Then click on <button> Select</button>
+			
+			<p> You may click on <%= link_to "Back to Information", present_intro_present_path,  :class=>"nextbutton" %> to return to the University of Kenya website at any stage.</p>
+	
+			
+		</td>
+
+	<td bgcolor="#E4FFF6" ><table class="center"  border ="1"  bgcolor="#E4FFF6">
+	<tr>
+		<td> 	<div  id="shown_first" style="display:inline">
+			      <a style="cursor:pointer" onclick="toggle_text('shown_first', 'hidden_first')" class="question2" >
+			     	<p>&nbsp;
+					</p>	<p>&nbsp;
+						</p> Click here to select Title
+			      </a>
+			</br><p>&nbsp;
+			</p>	<p>&nbsp;
+				</p>
+			</div>
+		
+<div id="hidden_first" style="display:none">			
+			<%= form_for([@user,@present_title]) do |f| %>
+		 	 <% if @present_title.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@present_title.errors.count, "error") %> prohibited this present_title from being saved:</h2>
+
+			      <ul>
+			      <% @present_title.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+
+			  <% end %>
+		
+		 <p> <div class="title2">
+		        <%= f.radio_button :titlea,"10" %><%= f.label :Information_about_Rhinos_and_their_Habitats %>
+		
+		  </div>
+		 </p>
+		<p>  
+		<div class="title2">
+		        <%= f.radio_button :titlea,"30" %><%= f.label :Factors_that_have_caused_Rhinos_to_become_an_Endangered_Species%>
+		
+		  </div>
+		</p>  
+		<p>
+		<div  class="title2">
+		        <%= f.radio_button :titlea,"5" %><%= f.label :Rhinos_need_to_be_saved %>
+		
+		  </div>
+		</p>
+		<p>
+		<div class="field">
+			<%=f.submit "Select"%>
+			</div>
+			<% end %>
+		</p>
+</div>
+</td>
+</tr>
+<tr>
+	<td><p>&nbsp;
+	</p>	<p>&nbsp;
+		</p><p>&nbsp;<p>&nbsp;
+		</p>	<p>&nbsp;
+			</p>
+		</p>
+			<a href="javascript:;" onClick="document.getElementById('hideaway').style.display='block';" class="question2">Click here to select 3 main points</a>
+
+				<p id="hideaway" style="display:none;" class="question3"  >Please select a title before selecting the main text </p>
+		<p>&nbsp;
+		</p>	<p>&nbsp;
+			</p><p>&nbsp;
+			</p>	<p>&nbsp;
+				</p><p>&nbsp;
+				</p>	<p>&nbsp;
+					</p><p>&nbsp;
+					</p>
+	</td>
+	</tr>
+</table>
+		
+		    </td>
+		  </tr>
+		</table>
+		<table align="right">
+			<tr><td ><%= link_to "Back to Information", present_intro_present_path,  :class=>"nextbutton"%>
+				</td>
+				</tr>
+				</table>
+	

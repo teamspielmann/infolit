@@ -1,0 +1,184 @@
+
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	<script type="text/javascript">
+
+	function toggle_text(shown, hidden) {
+	       var e = document.getElementById(shown);
+	       var f = document.getElementById(hidden);
+	    if(e.style.display == 'inline') {
+	                  e.style.display = 'none';
+	                  f.style.display = 'inline';
+	      }
+	      else {
+	                  e.style.display = 'inline';
+	                  f.style.display = 'none';
+	      }
+	}
+	</script>
+	</head>
+
+<%= image_tag("Taskbar5.png" )%>
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+			
+				<p>This is not a timed Task</p>
+
+				You have been asked to present to a group of students from another class ‘what has caused the Black Rhino to become an endangered species?’ You need to create a presentation slide explaining what you have found out from your research about black Rhinos. You have decided to use the information on the webpage from the University of Kenya. 
+
+				
+				
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			
+			
+			<p>Now select the 3 main points that summarise the most important information for your presentation slide. </p> <p>Then click on <button> Select</button>
+			<p>If you wish to change the title click 	<p class="nextbutton2"> <%= link_to "Change Title", new_user_present_title_path( @present_title)%></p> </p>
+			<p> You may click on <%= link_to "Back to Information", present_intro_present_path,  :class=>"nextbutton" %> to return to the University of Kenya website at any stage.</p>
+	
+			
+		</td>
+
+	<td  bgcolor="#E4FFF6" ><table class="center"   bgcolor="#E4FFF6">
+	<tr>
+	
+		<td colspan="2" > 		
+	<p class="title" ><%=@title%></p></td></tr>
+	<tr><td colspan="2" class="submit" >
+		<p> <%= link_to "Change Title", new_user_present_title_path( @present_title),  :class=>"nextbutton2"%></p>
+</td>
+</tr>
+<tr> <td width ="100%"> 
+	</td>
+</tr>
+<tr>
+	<td width="100%" >  <div  id="shown_first" style="display:inline">
+	      <a style="cursor:pointer" onclick="toggle_text('shown_first', 'hidden_first')" >
+				<p>&nbsp;
+				</p>		<p>&nbsp;
+						</p>	<p>&nbsp;
+							</p><p>&nbsp;
+							
+							
+							</p>	<p>&nbsp;
+								</p><p>&nbsp;
+								</p>	<p>&nbsp;
+									</p>	
+									<%if @wrong_number%>
+									<p class="error"><%=@wrong_number%></p>
+									<%end%>					
+				<p class="question2">Click here to select 3 main points</p>
+				
+		      </a>
+		</br><p>&nbsp;
+		</p>		<p>&nbsp;
+				</p>	<p>&nbsp;
+					</p><p>&nbsp;
+					</p>	<p>&nbsp;
+						</p><p>&nbsp;
+						</p>
+						<p>&nbsp;
+						</p>	
+		</div>
+		</td></tr>
+		</table>
+		<div id="hidden_first" style="display:none">
+<table bgcolor="#E4FFF6" align="center">	
+
+<tr><td width="20%"></td>
+	<td>	
+		
+		<%= form_for([@user,@present_title]) do |f| %>
+		
+		  <p> <div class="choices">
+		        <%= f.check_box :bodyb %><%= f.label "Rhinos are endangered because of Human activities" %>
+		  </div>
+		 </p>
+		<p>  
+</td></tr><tr><td width="20%"></td>
+<td>
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyc %><%= f.label "Jambiya daggers are from Yemen"%>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td width="79%" >		 <p> <div class="choices">
+		        <%= f.check_box :bodyd %><%= f.label "Poachers are bad people"  %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		 <p> <div class="choices">
+		        <%= f.check_box :bodye %><%= f.label  "Rhino horn is frequently used in Chinese medicine" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyf %><%= f.label "Chinese Traditional Medicine is practiced extensively in Asia" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyg %><%= f.label "Black Rhinos are actually grey in colour"  %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		<p> <div class="choices">
+		        <%= f.check_box :bodyh %><%= f.label "Hong Kong banned imports of Rhino horn in 1979" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>		
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyi %><%= f.label "Political conflict itself does not kill Rhinos" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>	
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyj %><%= f.label "Rhinos are herbivores" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		 <p> <div class="choices">
+		        <%= f.check_box :bodyk %><%= f.label "Rhinos are threatened by a loss of habitat" %>
+		  </div>
+		 </p>
+	</td></tr><tr><td width="20%"></td>
+	<td>
+		<p>
+		<div class="submit">
+			<%=f.submit "Select"%>
+			</div>
+			<% end %>
+		</p>
+	</td></tr>
+	
+</table>
+</div>
+		    </td>
+		  </tr>
+		</table>
+		<table align="right" >
+			<tr><td  ><%= link_to "Back to Information", present_intro_present_path,  :class=>"nextbutton" %>
+				</td>
+				</tr>
+				</table>
+

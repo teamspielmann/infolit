@@ -1,0 +1,81 @@
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	
+	</head>
+
+<%= image_tag("Taskbar5.png" )%>
+	<table cellspacing="5" bgcolor="white" border="1" cellpadding="10" >
+	<tr>
+		<td width="25%" bgcolor="#CCCCCC" cellpadding="10" class="instructions">
+			</br>
+			<b>Instructions:</b></br> 
+				</br>
+			
+				<p>This is not a timed Task</p>
+
+				You have been asked to present to a group of students from another class ‘what has caused the Black Rhino to become an endangered species?’ You need to create a presentation slide explaining what you have found out from your research about black Rhinos. You have decided to use the information on the webpage from the University of Kenya. 
+
+				
+				
+			</br>
+			</br>
+				<b>You must:</b>
+			</br>
+			<p> If you are satisfied with your selection of title and main points click on <a class="nextbutton"> Next</a> </p>
+			
+			<p> If you wish to change your title click <a class="nextbutton2"> Change Title</a></p>
+			
+			<p> If you wish to change your 3 Main points click<a class="nextbutton2"> Change Main points</a></p>
+	
+			
+		</td>
+
+	<td bgcolor="#E4FFF6" ><table class="center"    bgcolor="#E4FFF6">
+	<tr>
+		<td> 		
+	<p class="title" ><%=@title%></p>
+	
+
+</td>
+</tr>
+	<tr><td colspan="2" class="submit" >
+		<p > <%= link_to "Change Title", new_user_present_title_path( @present_title), :class=>"nextbutton2"%></p>
+</td>
+</tr>
+<tr ><td> <p class="choices2"><%=@too_many%></p></td></tr>
+
+<tr ><td> <p class="choices2"><%=@bodyb%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyc%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyd%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodye%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyf%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyg%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyh%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyi%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyj%></p></td></tr>
+<tr ><td> <p class="choices2"><%=@bodyk%></p></td></tr>
+
+	<tr><td colspan="2" class="submit" >
+		<p> <%= link_to "Change Main points", edit_user_present_title_path(@present_title),  :class=>"nextbutton2"%></p>
+</td>
+</tr>
+</table>
+		
+		    </td>
+		  </tr>
+		</table>
+		<table class="submit">
+			<tr><td >   <%=link_to "Next ", title_end_path,  :class=>"nextbutton"%> 
+				</td>
+				</tr>
+				</table>
+
+
+
