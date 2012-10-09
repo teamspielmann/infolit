@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gender: MyString
+  age: MyString
+  subject: MyString
+  comp_work: MyString
+  personal_use: MyString
+  professional_use: MyString
+  formal_training: MyText
+  informal_training: MyText
+  training_needs: MyText
+  other_sources_student: MyText
+
+two:
+  gender: MyString
+  age: MyString
+  subject: MyString
+  comp_work: MyString
+  personal_use: MyString
+  professional_use: MyString
+  formal_training: MyText
+  informal_training: MyText
+  training_needs: MyText
+  other_sources_student: MyText

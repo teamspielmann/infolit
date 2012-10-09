@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  most_reliable: 1
+  most_reason: 1
+  least_reliable: 1
+  least_reason: 1
+
+two:
+  most_reliable: 1
+  most_reason: 1
+  least_reliable: 1
+  least_reason: 1

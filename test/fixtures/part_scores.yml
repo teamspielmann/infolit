@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vehicle_type: 1
+  database_choice: 1
+  start_time: 2012-08-14 17:47:26
+  end_time: 2012-08-14 17:47:26
+  time_taken: 9.99
+  searches_count: 1
+  score: 1
+
+two:
+  vehicle_type: 1
+  database_choice: 1
+  start_time: 2012-08-14 17:47:26
+  end_time: 2012-08-14 17:47:26
+  time_taken: 9.99
+  searches_count: 1
+  score: 1

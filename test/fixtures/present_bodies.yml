@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body_a: MyString
+  body_b: MyString
+  body_c: MyString
+  score_a: 1
+  score_b: 1
+  score_c: 1
+
+two:
+  body_a: MyString
+  body_b: MyString
+  body_c: MyString
+  score_a: 1
+  score_b: 1
+  score_c: 1

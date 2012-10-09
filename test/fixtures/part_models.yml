@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  store_location: MyString
+  store_name: MyString
+  model: MyString
+  part: MyString
+  keywords: MyString
+
+two:
+  store_location: MyString
+  store_name: MyString
+  model: MyString
+  part: MyString
+  keywords: MyString

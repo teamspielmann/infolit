@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ict_c_teacher: 1
+  ict_no_teacher: 1
+  internet_school: 1
+  internet_outside: 1
+  sharing_computer: 1
+  ict_opportunities_school: MyString
+  ict_opportunities_out: MyString
+
+two:
+  ict_c_teacher: 1
+  ict_no_teacher: 1
+  internet_school: 1
+  internet_outside: 1
+  sharing_computer: 1
+  ict_opportunities_school: MyString
+  ict_opportunities_out: MyString

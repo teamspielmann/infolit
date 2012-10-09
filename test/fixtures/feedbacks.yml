@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  define_1: 9.99
+  define_2: 9.99
+  define_3: 9.99
+  define_t: 9.99
+  access_1: 9.99
+  access_2: 9.99
+  access_3: 9.99
+  access_4: 9.99
+  access_t: 9.99
+  evaluate_1: 9.99
+  evaluate_2: 9.99
+  evaluate_3: 9.99
+  evaluate_4: 9.99
+  evaluate_t: 9.99
+  use_1: 9.99
+  use_2: 9.99
+  use_t: 9.99
+  il_total: 9.99
+
+two:
+  define_1: 9.99
+  define_2: 9.99
+  define_3: 9.99
+  define_t: 9.99
+  access_1: 9.99
+  access_2: 9.99
+  access_3: 9.99
+  access_4: 9.99
+  access_t: 9.99
+  evaluate_1: 9.99
+  evaluate_2: 9.99
+  evaluate_3: 9.99
+  evaluate_4: 9.99
+  evaluate_t: 9.99
+  use_1: 9.99
+  use_2: 9.99
+  use_t: 9.99
+  il_total: 9.99

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time: 9.99
+  searches: 1
+  score: 1
+
+two:
+  time: 9.99
+  searches: 1
+  score: 1
