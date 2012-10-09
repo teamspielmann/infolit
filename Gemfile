@@ -5,7 +5,7 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -41,7 +41,3 @@ gem "dynamic_form"
 #gem "acts_as_indexed", "~> 0.7.8"
  
 gem 'kaminari'
-
-group :production do
-  gem 'mysql2'
-end
